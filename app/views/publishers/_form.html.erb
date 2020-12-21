@@ -1,0 +1,47 @@
+<%= form_with(model: publisher) do |form| %>
+  <% if publisher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(publisher.errors.count, "error") %> prohibited this publisher from being saved:</h2>
+
+      <ul>
+        <% publisher.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :unbaptized %>
+    <%= form.check_box :unbaptized %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unbaptized_date %>
+    <%= form.date_select :unbaptized_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :baptized %>
+    <%= form.check_box :baptized %>
+  </div>
+
+  <div class="field">
+    <%= form.label :baptism_date %>
+    <%= form.date_select :baptism_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_sheep %>
+    <%= form.check_box :other_sheep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :anointed %>
+    <%= form.check_box :anointed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
