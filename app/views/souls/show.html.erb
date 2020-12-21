@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @soul.first_name %>
+</p>
+
+<p>
+  <strong>Middle name:</strong>
+  <%= @soul.middle_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @soul.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @soul.gender %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @soul.birth_date %>
+</p>
+
+<p>
+  <strong>Death date:</strong>
+  <%= @soul.death_date %>
+</p>
+
+<%= link_to 'Edit', edit_soul_path(@soul) %> |
+<%= link_to 'Back', souls_path %>
