@@ -1,0 +1,22 @@
+<%= form_with(model: public_speaker) do |form| %>
+  <% if public_speaker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(public_speaker.errors.count, "error") %> prohibited this public_speaker from being saved:</h2>
+
+      <ul>
+        <% public_speaker.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :approved_for_outgoing_talks %>
+    <%= form.check_box :approved_for_outgoing_talks %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
