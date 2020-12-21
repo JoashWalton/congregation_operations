@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_21_025527) do
+ActiveRecord::Schema.define(version: 2020_12_21_030959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contact_informations", force: :cascade do |t|
+    t.string "personal_email"
+    t.string "branch_email"
+    t.string "mobile_phone_number"
+    t.string "home_phone_number"
+    t.string "mailing_address"
+    t.string "mailing_city"
+    t.string "mailing_state"
+    t.string "mailing_zip_code"
+    t.string "country"
+    t.string "apartment"
+    t.string "post_office_box_number"
+    t.string "post_office_box_city"
+    t.string "post_office_box_state"
+    t.string "post_office_box_zip_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "publishers", force: :cascade do |t|
     t.boolean "unbaptized"

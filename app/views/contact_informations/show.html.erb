@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personal email:</strong>
+  <%= @contact_information.personal_email %>
+</p>
+
+<p>
+  <strong>Branch email:</strong>
+  <%= @contact_information.branch_email %>
+</p>
+
+<p>
+  <strong>Mobile phone number:</strong>
+  <%= @contact_information.mobile_phone_number %>
+</p>
+
+<p>
+  <strong>Home phone number:</strong>
+  <%= @contact_information.home_phone_number %>
+</p>
+
+<p>
+  <strong>Mailing address:</strong>
+  <%= @contact_information.mailing_address %>
+</p>
+
+<p>
+  <strong>Mailing city:</strong>
+  <%= @contact_information.mailing_city %>
+</p>
+
+<p>
+  <strong>Mailing state:</strong>
+  <%= @contact_information.mailing_state %>
+</p>
+
+<p>
+  <strong>Mailing zip code:</strong>
+  <%= @contact_information.mailing_zip_code %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @contact_information.country %>
+</p>
+
+<p>
+  <strong>Apartment:</strong>
+  <%= @contact_information.apartment %>
+</p>
+
+<p>
+  <strong>Post office box number:</strong>
+  <%= @contact_information.post_office_box_number %>
+</p>
+
+<p>
+  <strong>Post office box city:</strong>
+  <%= @contact_information.post_office_box_city %>
+</p>
+
+<p>
+  <strong>Post office box state:</strong>
+  <%= @contact_information.post_office_box_state %>
+</p>
+
+<p>
+  <strong>Post office box zip code:</strong>
+  <%= @contact_information.post_office_box_zip_code %>
+</p>
+
+<%= link_to 'Edit', edit_contact_information_path(@contact_information) %> |
+<%= link_to 'Back', contact_informations_path %>
