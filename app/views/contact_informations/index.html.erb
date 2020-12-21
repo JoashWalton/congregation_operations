@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contact Informations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Personal email</th>
+      <th>Branch email</th>
+      <th>Mobile phone number</th>
+      <th>Home phone number</th>
+      <th>Mailing address</th>
+      <th>Mailing city</th>
+      <th>Mailing state</th>
+      <th>Mailing zip code</th>
+      <th>Country</th>
+      <th>Apartment</th>
+      <th>Post office box number</th>
+      <th>Post office box city</th>
+      <th>Post office box state</th>
+      <th>Post office box zip code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contact_informations.each do |contact_information| %>
+      <tr>
+        <td><%= contact_information.personal_email %></td>
+        <td><%= contact_information.branch_email %></td>
+        <td><%= contact_information.mobile_phone_number %></td>
+        <td><%= contact_information.home_phone_number %></td>
+        <td><%= contact_information.mailing_address %></td>
+        <td><%= contact_information.mailing_city %></td>
+        <td><%= contact_information.mailing_state %></td>
+        <td><%= contact_information.mailing_zip_code %></td>
+        <td><%= contact_information.country %></td>
+        <td><%= contact_information.apartment %></td>
+        <td><%= contact_information.post_office_box_number %></td>
+        <td><%= contact_information.post_office_box_city %></td>
+        <td><%= contact_information.post_office_box_state %></td>
+        <td><%= contact_information.post_office_box_zip_code %></td>
+        <td><%= link_to 'Show', contact_information %></td>
+        <td><%= link_to 'Edit', edit_contact_information_path(contact_information) %></td>
+        <td><%= link_to 'Destroy', contact_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact Information', new_contact_information_path %>
