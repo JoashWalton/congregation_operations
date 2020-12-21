@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Public Talk Outlines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Outline name</th>
+      <th>Outline number</th>
+      <th>Outline note</th>
+      <th>Outline date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @public_talk_outlines.each do |public_talk_outline| %>
+      <tr>
+        <td><%= public_talk_outline.outline_name %></td>
+        <td><%= public_talk_outline.outline_number %></td>
+        <td><%= public_talk_outline.outline_note %></td>
+        <td><%= public_talk_outline.outline_date %></td>
+        <td><%= link_to 'Show', public_talk_outline %></td>
+        <td><%= link_to 'Edit', edit_public_talk_outline_path(public_talk_outline) %></td>
+        <td><%= link_to 'Destroy', public_talk_outline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Public Talk Outline', new_public_talk_outline_path %>

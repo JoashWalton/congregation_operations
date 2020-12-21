@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Approved for outgoing talks:</strong>
+  <%= @public_speaker.approved_for_outgoing_talks %>
+</p>
+
+<%= link_to 'Edit', edit_public_speaker_path(@public_speaker) %> |
+<%= link_to 'Back', public_speakers_path %>

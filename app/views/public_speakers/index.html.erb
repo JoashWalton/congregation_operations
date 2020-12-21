@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Public Speakers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Approved for outgoing talks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @public_speakers.each do |public_speaker| %>
+      <tr>
+        <td><%= public_speaker.approved_for_outgoing_talks %></td>
+        <td><%= link_to 'Show', public_speaker %></td>
+        <td><%= link_to 'Edit', edit_public_speaker_path(public_speaker) %></td>
+        <td><%= link_to 'Destroy', public_speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Public Speaker', new_public_speaker_path %>
