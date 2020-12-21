@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :kingdom_halls
+  resources :congregations
   resources :contact_informations
   resources :publishers
   resources :souls

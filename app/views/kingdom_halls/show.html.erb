@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @kingdom_hall.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @kingdom_hall.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @kingdom_hall.state %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @kingdom_hall.zip_code %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @kingdom_hall.country %>
+</p>
+
+<%= link_to 'Edit', edit_kingdom_hall_path(@kingdom_hall) %> |
+<%= link_to 'Back', kingdom_halls_path %>

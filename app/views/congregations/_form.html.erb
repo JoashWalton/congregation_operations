@@ -1,0 +1,27 @@
+<%= form_with(model: congregation) do |form| %>
+  <% if congregation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(congregation.errors.count, "error") %> prohibited this congregation from being saved:</h2>
+
+      <ul>
+        <% congregation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :congregation_name %>
+    <%= form.text_field :congregation_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :congregation_number %>
+    <%= form.text_field :congregation_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
