@@ -1,0 +1,2 @@
+class PublicTalkOutline < ApplicationRecord
+end

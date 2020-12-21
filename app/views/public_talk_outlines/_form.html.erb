@@ -1,0 +1,37 @@
+<%= form_with(model: public_talk_outline) do |form| %>
+  <% if public_talk_outline.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(public_talk_outline.errors.count, "error") %> prohibited this public_talk_outline from being saved:</h2>
+
+      <ul>
+        <% public_talk_outline.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :outline_name %>
+    <%= form.text_field :outline_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :outline_number %>
+    <%= form.number_field :outline_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :outline_note %>
+    <%= form.text_area :outline_note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :outline_date %>
+    <%= form.date_select :outline_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_21_041656) do
+ActiveRecord::Schema.define(version: 2020_12_21_042320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 2020_12_21_041656) do
 
   create_table "public_speakers", force: :cascade do |t|
     t.boolean "approved_for_outgoing_talks"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "public_talk_outlines", force: :cascade do |t|
+    t.string "outline_name"
+    t.integer "outline_number"
+    t.text "outline_note"
+    t.date "outline_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
