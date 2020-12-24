@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_24_182746) do
+ActiveRecord::Schema.define(version: 2020_12_24_184848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_12_24_182746) do
     t.boolean "approved_for_outgoing_talks"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "publisher_id", null: false
+    t.index ["publisher_id"], name: "index_public_speakers_on_publisher_id"
   end
 
   create_table "public_talk_outlines", force: :cascade do |t|
@@ -98,6 +100,7 @@ ActiveRecord::Schema.define(version: 2020_12_24_182746) do
 
   add_foreign_key "congregations", "kingdom_halls"
   add_foreign_key "contact_informations", "publishers"
+  add_foreign_key "public_speakers", "publishers"
   add_foreign_key "publishers", "congregations"
   add_foreign_key "publishers", "souls"
 end

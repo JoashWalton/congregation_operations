@@ -4,4 +4,5 @@
 # * approved_for_outgoing_talks - boolean - whether a speaker is approved by the local BoE
 #
 class PublicSpeaker < ApplicationRecord
+  belongs_to :publisher
 end
