@@ -6,4 +6,5 @@
 #
 class Congregation < ApplicationRecord
   has_many :publishers
+  belongs_to :kingdom_hall
 end
