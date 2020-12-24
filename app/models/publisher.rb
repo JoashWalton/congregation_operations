@@ -10,5 +10,6 @@
 #
 class Publisher < ApplicationRecord
   belongs_to :soul
+  belongs_to :congregation
   has_one :contact_information
 end
