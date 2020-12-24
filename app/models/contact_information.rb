@@ -17,4 +17,5 @@
 # * post_office_box_zip_code - string - PO Box zip code
 #
 class ContactInformation < ApplicationRecord
+  belongs_to :publisher
 end
