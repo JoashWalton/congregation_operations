@@ -7,4 +7,5 @@
 # * outline_date - date outline was last updated
 #
 class PublicTalkOutline < ApplicationRecord
+  has_and_belongs_to_many :public_speakers
 end

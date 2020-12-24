@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_21_042320) do
+ActiveRecord::Schema.define(version: 2020_12_24_193300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2020_12_21_042320) do
     t.string "congregation_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "kingdom_hall_id", null: false
+    t.index ["kingdom_hall_id"], name: "index_congregations_on_kingdom_hall_id"
   end
 
   create_table "contact_informations", force: :cascade do |t|
@@ -39,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_12_21_042320) do
     t.string "post_office_box_zip_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "publisher_id", null: false
+    t.index ["publisher_id"], name: "index_contact_informations_on_publisher_id"
   end
 
   create_table "kingdom_halls", force: :cascade do |t|
@@ -55,6 +59,15 @@ ActiveRecord::Schema.define(version: 2020_12_21_042320) do
     t.boolean "approved_for_outgoing_talks"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "publisher_id", null: false
+    t.index ["publisher_id"], name: "index_public_speakers_on_publisher_id"
+  end
+
+  create_table "public_speakers_talk_outlines", id: false, force: :cascade do |t|
+    t.bigint "public_speaker_id", null: false
+    t.bigint "public_talk_outline_id", null: false
+    t.index ["public_speaker_id"], name: "index_public_speakers_talk_outlines_on_public_speaker_id"
+    t.index ["public_talk_outline_id"], name: "index_public_speakers_talk_outlines_on_public_talk_outline_id"
   end
 
   create_table "public_talk_outlines", force: :cascade do |t|
@@ -75,6 +88,10 @@ ActiveRecord::Schema.define(version: 2020_12_21_042320) do
     t.boolean "anointed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "soul_id", null: false
+    t.bigint "congregation_id", null: false
+    t.index ["congregation_id"], name: "index_publishers_on_congregation_id"
+    t.index ["soul_id"], name: "index_publishers_on_soul_id"
   end
 
   create_table "souls", force: :cascade do |t|
@@ -88,4 +105,9 @@ ActiveRecord::Schema.define(version: 2020_12_21_042320) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "congregations", "kingdom_halls"
+  add_foreign_key "contact_informations", "publishers"
+  add_foreign_key "public_speakers", "publishers"
+  add_foreign_key "publishers", "congregations"
+  add_foreign_key "publishers", "souls"
 end

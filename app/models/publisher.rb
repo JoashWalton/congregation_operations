@@ -9,4 +9,8 @@
 # * anointed - boolean, true if the publisher does partake of the emblems and identifies as such
 #
 class Publisher < ApplicationRecord
+  belongs_to :soul
+  belongs_to :congregation
+  has_one :contact_information
+  has_one :public_speaker
 end

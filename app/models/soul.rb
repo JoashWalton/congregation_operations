@@ -9,4 +9,5 @@
 # * death_date - date, date of death, month, date, year
 #
 class Soul < ApplicationRecord
+  has_one :publisher
 end

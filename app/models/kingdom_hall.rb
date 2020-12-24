@@ -8,4 +8,5 @@
 # * country - string - country of the Kingdom Hall
 #
 class KingdomHall < ApplicationRecord
+  has_many :congregations
 end
