@@ -1,0 +1,15 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0
+  Exclude:
+    - 'db/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+Layout/LineLength:
+  Description: 'Checks that line length does not exceed the configured limit.'
+  Max: 120
