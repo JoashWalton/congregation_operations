@@ -74,6 +74,7 @@ reader.pages.each do |page|
         year = /(.{2})\z/.match(date_string)[1].to_i + 2000
         @pt_date = Date.new(year, month)
       end
+    end
 
     puts @pt_title
     puts @pt_number
