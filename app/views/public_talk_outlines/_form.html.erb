@@ -31,6 +31,11 @@
     <%= form.date_select :outline_date, start_year: 2010 %>
   </div>
 
+  <div class="field">
+    <%= form.label :talk_outline_pdf %>
+    <%= form.file_field :talk_outline_pdf %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
