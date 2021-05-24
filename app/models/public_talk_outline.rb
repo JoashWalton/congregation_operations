@@ -8,4 +8,13 @@
 #
 class PublicTalkOutline < ApplicationRecord
   has_and_belongs_to_many :public_speakers
+  has_one_attached :talk_outline_pdf
+
+  before_save :titleize_public_talk_title
+
+  def titleize_public_talk_title
+    return unless outline_name.present?
+
+    self.outline_name = outline_name.titleize
+  end
 end
