@@ -8,7 +8,6 @@
 # birth_date
 # death_date
 
-Soul.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('Souls')
 
 # Make brothers
