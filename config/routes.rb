@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :public_talk_outlines
   resources :public_speakers
   resources :kingdom_halls
