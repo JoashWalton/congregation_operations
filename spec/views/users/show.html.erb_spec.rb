@@ -5,7 +5,7 @@ RSpec.describe "users/show", type: :view do
     @user = assign(:user, User.create!(
       username: "Username",
       email: "Email",
-      password_digest: "Password Digest"
+      password: "Password Digest"
     ))
   end
 
@@ -13,6 +13,6 @@ RSpec.describe "users/show", type: :view do
     render
     expect(rendered).to match(/Username/)
     expect(rendered).to match(/Email/)
-    expect(rendered).to match(/Password Digest/)
+    expect(rendered).to match(/Password/)
   end
 end
