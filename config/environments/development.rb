@@ -1,4 +1,6 @@
 require "active_support/core_ext/integer/time"
+require 'rails/console/helpers'
+Rails::ConsoleMethods.prepend(FactoryBot::Syntax::Methods)
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.

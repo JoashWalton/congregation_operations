@@ -25,6 +25,7 @@ class PublicTalkOutlinesController < ApplicationController
   # POST /public_talk_outlines.json
   def create
     @public_talk_outline = PublicTalkOutline.new(public_talk_outline_params)
+    @public_talk_outline.talk_outline_pdf.attach(params[:talk_outline_pdf])
 
     respond_to do |format|
       if @public_talk_outline.save
@@ -69,6 +70,6 @@ class PublicTalkOutlinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def public_talk_outline_params
-      params.require(:public_talk_outline).permit(:outline_name, :outline_number, :outline_note, :outline_date)
+      params.require(:public_talk_outline).permit(:outline_name, :outline_number, :outline_note, :outline_date, :talk_outline_pdf)
     end
 end
