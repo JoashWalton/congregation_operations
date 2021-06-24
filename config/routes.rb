@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "home#index"
+  
   resources :public_talk_outlines
   resources :public_speakers
   resources :kingdom_halls
