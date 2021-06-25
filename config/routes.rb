@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'home/index'
+  root to: "home#index"
+  
   resources :public_talk_outlines
   resources :public_speakers
   resources :kingdom_halls
