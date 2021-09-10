@@ -1,7 +1,9 @@
+# frozen_string_literal: true
 
-Soul.destroy_all
-Congregation.destroy_all
-Publisher.destroy_all
+# NOTE: delete publishers before souls, get foreign key constraint errors otherwise
+Publisher.delete_all
+Soul.delete_all
+Congregation.delete_all
 
 # Build one congregation for existing Kingdom Hall
 load 'db/seeds/kingdom_hall_seeds.rb'
