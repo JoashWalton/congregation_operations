@@ -8,8 +8,6 @@
 # birth_date
 # death_date
 
-ActiveRecord::Base.connection.reset_pk_sequence!('Souls')
-
 # Make brothers
 35.times do
   Soul.new(

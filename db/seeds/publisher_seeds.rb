@@ -8,8 +8,6 @@
 # other_sheep
 # anointed
 
-ActiveRecord::Base.connection.reset_pk_sequence!('Publishers')
-
 congregation = Congregation.new(
   congregation_name: Faker::Mountain.name,
   congregation_number: rand(1_000..99_999),

@@ -7,8 +7,6 @@
 # zip_code
 # country
 
-ActiveRecord::Base.connection.reset_pk_sequence!('Kingdom_Halls')
-
 5.times do
   building = KingdomHall.new(
     address: Faker::Address.street_address,
