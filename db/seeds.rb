@@ -18,6 +18,7 @@ ActiveRecord::Base.connection.tables.each do |table|
 end
 
 # Build one congregation for existing Kingdom Hall
-load 'db/seeds/kingdom_hall_seeds.rb'
-load 'db/seeds/soul_seeds.rb'
-load 'db/seeds/publisher_seeds.rb'
+# load 'db/seeds/kingdom_hall_seeds.rb'
+# load 'db/seeds/soul_seeds.rb'
+# load 'db/seeds/publisher_seeds.rb'
+load 'db/seeds/public_talk_outlines.rb'

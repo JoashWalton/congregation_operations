@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_25_185702) do
+ActiveRecord::Schema.define(version: 2021_09_11_233930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,10 @@ ActiveRecord::Schema.define(version: 2021_06_25_185702) do
     t.date "outline_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "outline_time"
+    t.string "subheadings", default: [], array: true
+    t.string "read_scriptures", default: [], array: true
+    t.string "file_location_url"
   end
 
   create_table "publishers", force: :cascade do |t|
