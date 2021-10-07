@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 92f0e15117fb62aaf0a1ae488d2d5cafd862c9c0
+  revision: d369a567f96f164cc3664263a3b9673696a3469d
   branch: master
   specs:
     faker (2.19.0)
@@ -204,7 +204,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
-    rubocop (1.22.0)
+    rubocop (1.22.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -215,7 +215,7 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.12.0)
       parser (>= 3.0.1.1)
-    rubocop-rails (2.12.2)
+    rubocop-rails (2.12.3)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
@@ -311,7 +311,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
-  webpacker (~> 5.0)
+  webpacker
 
 RUBY VERSION
    ruby 3.0.2p107
